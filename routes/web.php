@@ -15,6 +15,8 @@ Route::get('/', ['as' => 'index', 'uses' => 'TaskController@index']);
 
 Route::resource('task', 'TaskController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'TaskController@loggedInPage')->name('home');
 
 Auth::routes();
+
+// Route::put($uri, $callback);

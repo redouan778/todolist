@@ -33,7 +33,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+      exit();
+        echo "string";
+        // return view('addTask');
     }
 
     /**
@@ -44,7 +46,15 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+      'Task_title'=>'required',
+      'Task_description'=> 'required',
+    ]);
+    $TaskModel = new TaskModel([
+      'Task_title' => $request->get('Task_title'),
+      'Task_descriptionTask_description'=> $request->get('Task_description'),
+    ]);
+    $TaskModel->save();
     }
 
     /**
@@ -87,8 +97,18 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy($id)
     {
-        //
+      $share = TaskModel::find($id);
+       $share->delete();
+
+        return redirect('/')->with('success', 'Stock has been deleted Successfully');
+    }
+
+    public function loggedInPage(){
+      $AllTaskInfo = TaskModel::all();
+      // exit();
+      return view('index', [
+          'AllTaskInfo' => $AllTaskInfo]);
     }
 }
