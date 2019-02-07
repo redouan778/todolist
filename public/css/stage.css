@@ -1,0 +1,589 @@
+body {
+    /*background-image : url("download(2).jpg");*/
+}
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+
+#expired{
+    background-color: red;
+    font-weight: bold;
+    width: 60%;
+    display: unset;
+    padding: 3px;
+}
+
+.warning{
+    /*#ff6633*/
+    color: #ff8c1a;
+    /*font-weight: bold;*/
+
+}
+
+.error{
+    color: red;
+}
+
+.vorm{
+    margin: auto;
+}
+
+
+.extra_info_btn {
+    display: none;
+    position: relative;
+    left: 15px;
+    bottom: 11px;
+}
+
+
+.btn-rij:hover .extra_info_btn{
+    display: flex;
+}
+
+
+.terug{
+    color: white;
+}
+
+
+.back{
+    color: white;
+}
+
+
+.h11{
+    position: relative;
+    bottom: 43px;
+}
+
+
+.updates{
+    margin-top: 100px;
+}
+
+
+.delete{
+    margin: auto;
+}
+
+
+.header-h1{
+    margin-top: 21px;
+}
+
+
+.header-cm{
+    color: white;
+}
+
+
+.roll{
+    float: right;
+}
+
+
+.btn-info {
+    color: #fff;
+    background-color: #f69700;
+    border-color: #f69700;
+}
+
+
+.btn-info:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.dropdown-menu{
+    width: 5%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    /*min-width: 10px;*/
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background-clip: padding-box;
+}
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #495d74;
+    color: #FFFFFF;
+}
+
+
+.dropdown-menu > li > form :hover, .dropdown-menu > li > form :focus {
+    background-color: #495d74;
+    color: #FFFFFF;
+}
+
+
+.btn-verwijder{
+    border: none;
+    background-color: white;
+    width: 100%;
+    padding-right: 16px;
+}
+
+
+.panel-default {
+    margin-top: 3%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #f69700;
+    border-color: #f69700;
+    font-size: 18px;
+    border: none;
+}
+
+
+.btn-PP{
+    color: #fff;
+    background-color: #f69700;
+    border-color: #f69700;
+    font-size: 18px;
+    width: 16%;
+}
+
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.btn-VT{
+    width: 8%;
+    margin-left: 92%;
+}
+
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    margin-left: 9.6%;
+}
+
+
+.alert-danger{
+    margin-left: 9.6%;
+}
+
+
+.btn-bewerk {
+    color: #fff;
+    background-color: #f69700;
+    border-color: #f69700;
+    margin: 2% 0% 1% 0.2%;
+    width: 8%;
+    font-size: 18px;
+    margin-left: 25px;
+}
+
+
+.dash-navbar-left {
+    position: absolute;
+    top: 64px;
+}
+
+
+span.search-bar input[type="search"] {
+    border: 2px solid #fdac70;
+    background: none;
+    color: #f5f5f5;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+
+.logoCM{
+    max-width: 9.8%;
+    height: 4.35em;
+    margin-bottom: -11%;
+}
+
+
+.header-right ul.nav.d-inl-bl {
+    margin-right: -12%;
+}
+
+
+.user-img{
+    width: 35px;
+    height: 35px;
+}
+
+
+.kkk{
+    height: 69px;
+}
+
+
+.index-rij:hover h5 a{
+    color: #fbad49;
+}
+
+
+a:hover{
+    color: #fbad49;
+}
+
+
+a{
+    color: black;
+    font-weight: bold;
+}
+
+
+a:not([href]):not([tabindex]):hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+.basic-table.cta tr:last-child td {
+     font-weight: normal;
+    color: #2e2e3a;
+}
+
+
+.show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.open>.dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .open>.dropdown-toggle.btn-info.focus, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 12px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333;
+    white-space: nowrap;
+}
+
+
+.tables{
+    width: 50%;
+}
+
+.table_basic1 {
+     margin-top: 0px;
+}
+
+
+.glyphicon:empty {
+    width: 1.2em;
+}
+
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+     box-shadow: unset;
+}
+
+
+.modal-footer .btn+.btn {
+    margin-bottom: 0;
+    margin-left: 7px;
+    background-color: #fbad49;
+}
+
+
+.modal-footer .btn+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.trash{
+    margin-left: -12px;
+}
+
+
+.form-check{
+}
+
+
+.responsive-table-input-matrix{
+    width: 50%;
+}
+
+
+.basic-table table {
+    border-collapse: collapse;
+}
+
+
+.btn-BO {
+    color: #fff;
+    background-color: #f69700;
+    border-color: #f69700;
+    font-size: 18px;
+    width: 19%;
+}
+
+
+.btn-BO:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+
+.form-control {
+    font-size: 1.4rem;
+}
+
+
+.home_right_client h3, .home_right_pie h3 {
+    font-size: 22px;
+    color: #2e2e3a;
+    margin-bottom: 0;
+}
+
+
+.home_client_text {
+    margin-left: 22px;
+    padding-top: 7px;
+}
+
+
+.home_right_client, .home_right_pie {
+    padding: 11px 5px;
+    background: #fff;
+    margin-top: 2px;
+    box-shadow: 0px 4px 36px #e4e4e4;
+    float: right;
+    width: 213px;
+    margin-bottom: 20px;
+    margin-right: 13%;
+}
+
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-bottom: 0;
+    border-left: 4px solid transparent;
+}
+
+.fa-backward:hover{
+    color: orange;
+}
+
+
+.z-n-b{
+    color: red;
+}
+
+
+.dashboard-tabel{
+    padding-left: 130px;
+    padding-right: 130px;
+    transition: .4s;
+    padding-top: 30px;
+}
+
+
+.tabel {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 25px;
+}
+
+
+.h-tabel{
+    color: red;
+}
+
+
+.titel-tabel{
+    margin-left: 43%;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+
+.dashboard{
+    font-size: 45px;
+}
+
+
+.archiveer{
+    float: right;
+}
+
+
+.error_filter{
+    font-weight: bold;
+    font-size: 6em;
+    margin: 15% 0% 0% 15%;
+}
+
+
+#dashboard-table{
+    margin-top: 3%;
+}
+
+
+.geen-inlog-vereist{
+    color: white;
+    font-size: 2em;
+}
+
+
+.geen-inlog-vereist-div{
+    margin-top: 16px;
+}
+
+
+.dashboard-icon{
+    width: 34px;
+    margin-bottom: 7px;
+}
+
+
+.basic-table.cta tr:nth-of-type(odd) {
+    background: white;
+}
+
+
+.basic-table.cta tr{
+    background: #f7f7f7;
+     border-top: none
+}
+
+
+.basic-table tr:nth-of-type(odd) {
+    background: grey;
+}
+
+
+.logo-dashboard{
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    z-index: -1;
+}
+
+
+.basic-table th.tabel-letter-grote{
+    background: black;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 38px;
+    color: #ffffff;
+    font-weight: 400;
+    height: 73px;
+}
+
+.erken-letter-grote {
+    font-size: 33px;
+}
+
+.tijd-melding{
+    float: right;
+    font-size: 35px;
+}
+
+.crossmotion-dashboard{
+    width: 30%;
+    /*position: absolute;*/
+    /*right: 10%;*/
+    margin-right: 100px;
+
+}
+
+.basic-table.cta tr {
+    background: lightgray;
+    border-top: none;
+}
+
+.up-down-van-een-website{
+   display: inline-block;
+}
+
+.website-up{
+    padding: 7px;
+}
+
+
+.website-down{
+    padding: 7px;
+}
+
+
+.websiteNaam{
+    display: inline;
+}
+
+.bg-dashboard{
+    background: #FFFFFF;
+}
+
+.check-status{
+    color: red;
+}
+
+.badge-warning {
+    color: white;
+    background-color: #EA5B0C;
+}
+
+
+/*.up-down-van-een-website {*/
+    /*display: inline-flex;*/
+/*}*/
+
+.down-symbol-website-dashboard {
+    display: inline-flex;
+}

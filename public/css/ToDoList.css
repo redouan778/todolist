@@ -1,0 +1,23 @@
+.logo a {
+    font-size: 22px;
+    color: red;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.header-area {
+    background: #fd8e40;
+    position: relative;
+    z-index: 9999;
+    height: 60px;
+}
+
+body{
+overflow-x: hidden;
+}
+
+.task-table{
+  float: right;
+  width: 84.4%;
+}
