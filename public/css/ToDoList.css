@@ -25,3 +25,18 @@ overflow-x: hidden;
 .bg-light{
   background: lightslategrey
 }
+
+.welcome-user{
+  margin-left: 15%;
+}
+
+
+.btn-info{
+  width: 24px;
+  height: 24px;
+}
+
+.dropdown-toggle:empty::after {
+    margin-left: -4px;
+    margin-bottom: 7px;
+}

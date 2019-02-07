@@ -8,46 +8,20 @@
 
       <title>To-Do List</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
       <link src="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
       <link src="{{ asset('css/data-table.css') }}" rel="stylesheet">
-
       <!-- FAVICON -->
       <link href="{{ asset('css/ToDoList.css') }}" rel="stylesheet">
-      <!-- <link rel="icon" href="assets/img/favicon.png"> -->
-      <!-- animate.css -->
-      <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
-      <!-- material fonts.css -->
-      <link href="{{ asset('css/material-design-iconic-font.min.css') }}" rel="stylesheet">
-      <!-- parfect scrollbar.css -->
-      <link href="{{ asset('css/perfect-scrollbar.min.css') }}" rel="stylesheet">
-      <!-- nice select.css -->
-      <link href="{{ asset('css/nice-select.css') }}" rel="stylesheet">
-      <!-- style.css -->
-      <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-      <!-- responsive.css -->
-      <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-      <!-- theme-color.css -->
-      <link href="{{ asset('css/theme-color.css') }}" rel="stylesheet">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>To-Do List</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -81,7 +55,10 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+
                         @else
+                        <a class="welcome-user">Welcome , {{ Auth::user()->name }}</a>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -117,9 +94,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/popper.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/counter.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/data-table.js') }}"  type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>

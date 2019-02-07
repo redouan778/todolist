@@ -1,7 +1,4 @@
 @extends('layouts.app')
-
-@section('content')
-@extends('layouts.app')
 @section('content')
 
     @if(session('message'))
@@ -10,52 +7,7 @@
             <p>{{session('message')}}</p>
         </div>
     @endif
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <link src="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <link src="{{ asset('css/data-table.css') }}" rel="stylesheet">
-
-    <!-- FAVICON -->
-    <link href="{{ asset('css/ToDoList.css') }}" rel="stylesheet">
-    <!-- <link rel="icon" href="assets/img/favicon.png"> -->
-    <!-- animate.css -->
-    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
-    <!-- material fonts.css -->
-    <link href="{{ asset('css/material-design-iconic-font.min.css') }}" rel="stylesheet">
-    <!-- parfect scrollbar.css -->
-    <link href="{{ asset('css/perfect-scrollbar.min.css') }}" rel="stylesheet">
-    <!-- nice select.css -->
-    <link href="{{ asset('css/nice-select.css') }}" rel="stylesheet">
-    <!-- style.css -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!-- responsive.css -->
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-    <!-- theme-color.css -->
-    <link href="{{ asset('css/theme-color.css') }}" rel="stylesheet">
-  </head>
   <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <table id="data-table" class="table">
       <thead class="thead-dark">
@@ -71,7 +23,8 @@
           @foreach ($AllTaskInfo as $key)
           <td>{{$key->Task_title}}
 
-            <a data-toggle="dropdown" class="btn btn-info roll dropdown-toggle btn-xs"></a>
+
+            <a data-toggle="dropdown" class="btn btn-info roll dropdown-toggle btn-xs pointer"></a>
             <ul role="menu" class="dropdown-menu">
                 <li class="icon">
                     <a href="{{ route('task.edit', $key->Task_id)}}" title="Bewerk de specifieke status" class="icon dropdown-menuOwn">
@@ -107,6 +60,4 @@
   </script>
 </body>
 </html>
-@endsection
-
 @endsection
