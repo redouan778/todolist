@@ -34,9 +34,17 @@ overflow-x: hidden;
 .btn-info{
   width: 24px;
   height: 24px;
+  float: right;
 }
 
 .dropdown-toggle:empty::after {
     margin-left: -4px;
     margin-bottom: 7px;
+}
+
+.btn-verwijder{
+    border: none;
+    background-color: white;
+    width: 100%;
+    padding-right: 16px;
 }

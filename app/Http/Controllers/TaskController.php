@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\model\TaskModel;
+use App\User;
+use App\TaskModel;
 use Illuminate\Http\Request;
 
 
@@ -33,9 +34,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-      exit();
-        echo "string";
-        // return view('addTask');
+      return view('tasks.create');   // views/task/create.blade.php
     }
 
     /**
@@ -49,12 +48,20 @@ class TaskController extends Controller
       $request->validate([
       'Task_title'=>'required',
       'Task_description'=> 'required',
+
     ]);
     $TaskModel = new TaskModel([
       'Task_title' => $request->get('Task_title'),
-      'Task_descriptionTask_description'=> $request->get('Task_description'),
+      'Task_description'=> $request->get('Task_description'),
+      // 'User_id' => $User_id,
+      'User_id' => User::find($id),
+
     ]);
+
     $TaskModel->save();
+
+return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' ' . 'is succesfully created.');
+
     }
 
     /**
