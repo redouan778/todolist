@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\User;
 use App\TaskModel;
 use Illuminate\Http\Request;
-
+use Auth;
 
 class TaskController extends Controller
 {
-
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
   // protected $task;
 
   /**
@@ -18,10 +21,8 @@ class TaskController extends Controller
   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
   */
     public function index(Request $request){
-      // echo "string";
-      // exit();
+
       $AllTaskInfo = TaskModel::all();
-// exit();
       return view('index', [
           'AllTaskInfo' => $AllTaskInfo]);
 
@@ -45,6 +46,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+
       $request->validate([
       'Task_title'=>'required',
       'Task_description'=> 'required',
@@ -54,8 +56,7 @@ class TaskController extends Controller
       'Task_title' => $request->get('Task_title'),
       'Task_description'=> $request->get('Task_description'),
       // 'User_id' => $User_id,
-      'User_id' => User::find($id),
-
+       'User_id' => Auth::id(),
     ]);
 
     $TaskModel->save();
@@ -81,22 +82,38 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        //
+      $task = TaskModel::find($id);
+
+      return view('tasks/editTask', ['task' => $task]);
     }
+
+
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
-        //
+        $Task = TaskModel::find($id);
+
+       $Task->Task_title = $request->Task_title;
+       $Task->Task_description = $request->Task_description;
+       $Task->save();
+
+       return redirect('index');
     }
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

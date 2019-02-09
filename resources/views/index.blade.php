@@ -30,7 +30,7 @@
                         <i class="glyphicon glyphicon-edit icon"></i>Bewerk
                     </a>
                 </li>
-                <li class="divider"></li>
+                  <li class="divider"></li>
                 <li>
                     <form action="{{ route('task.destroy', $key->Task_id) }}" method="POST">
                         {{ csrf_field() }}
