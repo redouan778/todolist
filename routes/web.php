@@ -13,7 +13,7 @@
 
 Route::get('/', ['as' => 'index', 'uses' => 'TaskController@index']);
 
-Route::post('/', ['as' => 'index', 'uses' => 'TaskController@index']);
+// Route::post('/', ['as' => 'index', 'uses' => 'TaskController@index']);
 
 Route::resource('task', 'TaskController');
 
@@ -21,4 +21,6 @@ Route::get('/home', 'TaskController@loggedInPage')->name('home');
 
 Auth::routes();
 
-// Route::put($uri, $callback);
+Route::resource('list', 'ListController');
+
+Route::get('list', 'ListController@index')->name('list');

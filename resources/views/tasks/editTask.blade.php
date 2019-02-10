@@ -18,14 +18,14 @@
                         <div class="form-group">
                             <label for="naam" class="col-sm-2 control-label">Task Title</label>
                             <div class="col-sm-6">
-                             <input type="text" id="naam" name="naam" class="form-control" value="{{$task->Task_title}}" />
+                             <input type="text" id="naam" name="Task_title" class="form-control" value="{{$task->Task_title}}" />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="opmerking"  class="col-sm-2 control-label">Opmerking</label>
                             <div class="col-sm-6">
-                                <input type="text"  name="opmerking" class="form-control" value="{{$task->Task_description}}" />
+                                <input type="text"  name="Task_description" class="form-control" value="{{$task->Task_description}}" />
                             </div>
                         </div>
 

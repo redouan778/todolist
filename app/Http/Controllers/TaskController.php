@@ -23,7 +23,7 @@ class TaskController extends Controller
     public function index(Request $request){
 
       $AllTaskInfo = TaskModel::all();
-      return view('index', [
+      return view('tasks.index', [
           'AllTaskInfo' => $AllTaskInfo]);
 
       }
@@ -100,13 +100,13 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      */
     public function update(Request $request, $id)
     {
-        $Task = TaskModel::find($id);
+        $TaskModel = TaskModel::find($id);
 
-       $Task->Task_title = $request->Task_title;
-       $Task->Task_description = $request->Task_description;
-       $Task->save();
+       $TaskModel->Task_title = $request->Task_title;
+       $TaskModel->Task_description = $request->Task_description;
+       $TaskModel->save();
 
-       return redirect('index');
+       return redirect('/');
     }
 
 

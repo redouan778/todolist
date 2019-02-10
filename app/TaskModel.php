@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TaskModel extends Model
 {
-  protected $fillable = ['Task_title', 'Task_description', 'User_id'];
+  protected $fillable = ['Task_title', 'Task_description', 'List_id' ,'User_id'];
 
 
   protected $table = 'tasks';
@@ -18,6 +18,12 @@ class TaskModel extends Model
 
   public function user()
   {
-      return $this->belongsTo(User::class);
+    $this->belongsTo('App\User');
+
+  }
+
+  public function list()
+  {
+    $this->belongsTo('App\ListModel');
   }
 }
