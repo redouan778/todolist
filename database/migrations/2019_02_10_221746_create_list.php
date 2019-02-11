@@ -14,10 +14,11 @@ class CreateList extends Migration
     public function up()
     {
         Schema::create('list', function (Blueprint $table) {
-            $table->increments('list_id');
-            $table->string('List_title');
-            $table->integer('user_id');
-            $table->timestamps();
+          $table->increments('list_id');
+           $table->unsignedInteger('User_id');
+           $table->string('List_title');
+           $table->timestamps();
+           $table->foreign('User_id')->references('id')->on('users');
 
         });
     }
