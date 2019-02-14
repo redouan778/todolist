@@ -23,9 +23,31 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="opmerking"  class="col-sm-2 control-label">Opmerking</label>
+                            <label for="opmerking"  class="col-sm-2 control-label">Task description</label>
                             <div class="col-sm-6">
                                 <input type="text"  name="Task_description" class="form-control" value="{{$task->Task_description}}" />
+                            </div>
+                        </div>
+
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label">Task status</label>
+                            <div class="col-sm-6">
+                                <select name="update_periode">
+                                    <option value="Done" @if($task->Status == "Done" ) selected @endif>
+                                      Done
+                                    </option>
+
+                                    <option value="Not Done Yet" @if($task->Status == "Not Done Yet" ) selected @endif>
+                                        Not Done Yet
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="opmerking"  class="col-sm-2 control-label">Task Duration</label>
+                            <div class="col-sm-6">
+                                <input type="text"  name="Duration" class="form-control" value="{{$task->Duration}}" />
                             </div>
                         </div>
 

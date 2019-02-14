@@ -37,6 +37,20 @@
                         </div>
                     </div>
 
+
+
+                    <div class="form-group">
+                        <label for="Status" class="col-sm-2 control-label">Task Status</label>
+                        <div class="col-sm-6">
+                          <select name="Status">
+                              <option value="Done">Done</option>
+                              <option value="Not Done Yet">Not Done Yet</option>
+
+                          </select>
+
+                        </div>
+                    </div>
+
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add Task</button>

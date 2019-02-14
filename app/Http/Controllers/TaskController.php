@@ -24,7 +24,7 @@ class TaskController extends Controller
     public function index($id){
       $list = List2::find($id);
       $AllTaskInfo = Task::where('list_id', $id)->get();
-      
+
 
       return view('tasks.index', [
           'AllTaskInfo' => $AllTaskInfo,
@@ -61,7 +61,7 @@ class TaskController extends Controller
       'Task_title' => $request->get('Task_title'),
       'Task_description'=> $request->get('Task_description'),
       'Duration'=> $request->get('Duration'),
-      'Status' => ('Not Done Yet'),
+      'Status' =>  $request->get('Status'),
       'User_id' => Auth::id(),
       'List_id' => $request->get('List_id'),
     ]);
