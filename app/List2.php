@@ -4,15 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ListModel extends Model
+class List2 extends Model
 {
-
-
-  protected $fillable = ['List_title',  'User_id', 'List_id'];
-
 
   protected $table = 'list';
 
+  protected $fillable = ['List_title',  'User_id', 'List_id'];
 
   protected $primaryKey = 'list_id';
 
@@ -25,6 +22,6 @@ class ListModel extends Model
 
   public function tasks()
   {
-    $this->belongsTo('App\TaskModel');
+    $this->hasMany('App\Task');
   }
 }

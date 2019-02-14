@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddListIdToTasksTable extends Migration
+class AddColumnsTasks extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,9 @@ class AddListIdToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-          $table->unsignedInteger('List_id');
-          $table->foreign('list_id')->references('list_id')->on('ListModel');
-
-        });
+          $table->enum('Status', ['Done', 'Not Done Yet']);
+          $table->integer('Duration');
+      });
     }
 
     /**
@@ -28,7 +27,7 @@ class AddListIdToTasksTable extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('List_id');
+          $table->dropColumn('Status', 'Durantion');
         });
     }
 }

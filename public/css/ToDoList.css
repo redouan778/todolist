@@ -48,3 +48,33 @@ overflow-x: hidden;
     width: 100%;
     padding-right: 16px;
 }
+
+.list_title{
+  left: 500px;
+  top: 12px;
+  position: absolute;
+}
+
+.add-task{
+  position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.dropdown-menu {
+
+    min-width: 6rem;
+}
+
+.icon{
+  margin-left: 8px;
+}
+
+
+.btn-verwijder {
+    border: none;
+    background-color: white;
+    width: 89%;
+    padding-right: 16px;
+    color: #007bff;
+}

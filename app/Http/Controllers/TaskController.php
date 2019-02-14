@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\TaskModel;
+use App\list2;
+use App\Task;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -20,12 +21,16 @@ class TaskController extends Controller
   * @param  $task
   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
   */
-    public function index(Request $request){
+    public function index($id){
+      $list = List2::find($id);
+      $AllTaskInfo = Task::where('list_id', $id)->get();
+      
 
-      $AllTaskInfo = TaskModel::all();
       return view('tasks.index', [
-          'AllTaskInfo' => $AllTaskInfo]);
-
+          'AllTaskInfo' => $AllTaskInfo,
+          'list' => $list,
+          'id' => $id
+        ]);
       }
 
     /**
@@ -33,9 +38,9 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($list_id)
     {
-      return view('tasks.create');   // views/task/create.blade.php
+      return view('tasks.create')->with('list_id', $list_id);   // views/task/create.blade.php
     }
 
     /**
@@ -50,18 +55,20 @@ class TaskController extends Controller
       $request->validate([
       'Task_title'=>'required',
       'Task_description'=> 'required',
-
+      'Duration' => 'required'
     ]);
-    $TaskModel = new TaskModel([
+    $TaskModel = new Task([
       'Task_title' => $request->get('Task_title'),
       'Task_description'=> $request->get('Task_description'),
-      // 'User_id' => $User_id,
-       'User_id' => Auth::id(),
+      'Duration'=> $request->get('Duration'),
+      'Status' => ('Not Done Yet'),
+      'User_id' => Auth::id(),
+      'List_id' => $request->get('List_id'),
     ]);
 
     $TaskModel->save();
 
-return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' ' . 'is succesfully created.');
+return redirect('/listPage')->with('message', 'Task  ' . ' ' . $request->Task_title . ' ' . 'is succesfully created.');
 
     }
 
@@ -71,9 +78,9 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($id)
     {
-        //
+
     }
 
     /**
@@ -84,7 +91,7 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      */
     public function edit($id)
     {
-      $task = TaskModel::find($id);
+      $task = Task::find($id);
 
       return view('tasks/editTask', ['task' => $task]);
     }
@@ -100,17 +107,15 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      */
     public function update(Request $request, $id)
     {
-        $TaskModel = TaskModel::find($id);
+        $TaskModel = Task::find($id);
 
        $TaskModel->Task_title = $request->Task_title;
        $TaskModel->Task_description = $request->Task_description;
+
        $TaskModel->save();
 
-       return redirect('/');
+       return redirect('/listPage');
     }
-
-
-
 
 
 
@@ -123,16 +128,9 @@ return redirect('/')->with('message', 'Task  ' . ' ' . $request->Task_title . ' 
      */
     public function destroy($id)
     {
-      $share = TaskModel::find($id);
+      $share = Task::find($id);
        $share->delete();
 
-        return redirect('/')->with('success', 'Stock has been deleted Successfully');
-    }
-
-    public function loggedInPage(){
-      $AllTaskInfo = TaskModel::all();
-      // exit();
-      return view('index', [
-          'AllTaskInfo' => $AllTaskInfo]);
+        return redirect('/listPage')->with('success', 'Stock has been deleted Successfully');
     }
 }

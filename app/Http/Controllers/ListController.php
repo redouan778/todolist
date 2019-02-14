@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\TaskModel;
-use App\ListModel;
+use App\Task;
+use App\List2;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -21,15 +21,12 @@ class ListController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      $AllListInfo = ListModel::all();
-// echo "<pre>";
-// print_r($AllListInfo);
-//       exit();
+    public function index(){
+
+      $AllListInfo = List2::all();
 
       return view('list.index', [
-          '$List' => $AllListInfo]);
+          'List' => $AllListInfo]);
     }
 
     /**
@@ -39,7 +36,7 @@ class ListController extends Controller{
      */
     public function create()
     {
-        //
+      return view('list.create');   // views/task/create.blade.php
     }
 
     /**
@@ -50,7 +47,18 @@ class ListController extends Controller{
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+      'List_title'=>'required',
+      ]);
+
+      $List = new List2([
+        'List_title' => $request->get('List_title'),
+        'User_id' => Auth::id(),
+      ]);
+
+    $List->save();
+
+return redirect('/listPage')->with('message', 'List  ' . ' ' . $request->List_title . ' ' . 'is succesfully created.');
     }
 
     /**
@@ -72,7 +80,9 @@ class ListController extends Controller{
      */
     public function edit($id)
     {
-        //
+      $List = List2::find($id);
+
+      return view('list/edit', ['List' => $List]);
     }
 
     /**
@@ -84,7 +94,12 @@ class ListController extends Controller{
      */
     public function update(Request $request, $id)
     {
-        //
+      $AddList = List2::find($id);
+
+     $AddList->List_title = $request->List_title;
+     $AddList->save();
+
+     return redirect('/list');
     }
 
     /**
@@ -95,6 +110,9 @@ class ListController extends Controller{
      */
     public function destroy($id)
     {
-        //
+      $share = List2::find($id);
+      $share->delete();
+
+        return redirect('/list')->with('success', 'Stock has been deleted Successfully');
     }
 }

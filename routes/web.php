@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', ['as' => 'index', 'uses' => 'TaskController@index']);
+// all lists:   localhost/list/index
+Route::get('/listPage', 'ListController@index')->name('list');
 
-// Route::post('/', ['as' => 'index', 'uses' => 'TaskController@index']);
+// http://127.0.0.1:8000/taskPage/4
+Route::get('/taskPage/{id}', 'TaskController@index')->name('taskView');
+
+Route::get('/task/{list_id}/create', 'TaskController@create')->name('task.create');
 
 Route::resource('task', 'TaskController');
 
@@ -22,5 +26,3 @@ Route::get('/home', 'TaskController@loggedInPage')->name('home');
 Auth::routes();
 
 Route::resource('list', 'ListController');
-
-Route::get('list', 'ListController@index')->name('list');

@@ -4,6 +4,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <form action="{{route('task.store')}}" method="POST" class="form-horizontal">
+                  <input type="hidden" name="List_id" value="{{ $list_id }}">
                     {{ csrf_field() }}
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
@@ -26,6 +27,13 @@
                         <label for="opmerking" class="col-sm-2 control-label">Task Description</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="Task_description" placeholder="Task Description">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="opmerking" class="col-sm-2 control-label">Task Duration</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="Duration" placeholder="Task Duration">
                         </div>
                     </div>
 

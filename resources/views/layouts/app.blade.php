@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/listPage') }}">
                   To-Do List
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -79,9 +79,6 @@
                         @endguest
                     </ul>
                 </div>
-                <form class="form-inline my-2 my-lg-0" method="post" action="{{ route('task.create') }}">
-                <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">+Add Task</button>
-              </form>
             </div>
           </nav>
 
@@ -89,6 +86,12 @@
             @yield('content')
         </main>
     </div>
+    
+    <script>
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+  $("#success-alert").slideUp(500);
+});
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
