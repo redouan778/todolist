@@ -29,10 +29,8 @@
           @foreach ($AllTaskInfo as $keey)
 
 
-@<?php if (condition): ?>
-  s
-<?php endif; ?>
-{{($keey['Status'] === 'Done') }}
+@if ($keey['Status'] === 'Not Done Yet')
+  <p>hoioi</p>
 @endforeach
 
           @foreach ($AllTaskInfo as $key)
