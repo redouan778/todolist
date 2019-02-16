@@ -23,13 +23,17 @@ class TaskController extends Controller
   */
     public function index($id){
       $list = List2::find($id);
-      $AllTaskInfo = Task::where('list_id', $id)->get();
 
+      $AllOpenTask = Task::where('list_id', $id)
+       ->where('Status', 'Not Done Yet')->count();
+
+      $AllTaskInfo = Task::where('list_id', $id)->get();
 
       return view('tasks.index', [
           'AllTaskInfo' => $AllTaskInfo,
           'list' => $list,
-          'id' => $id
+          'id' => $id,
+          'AllOpenTask' =>$AllOpenTask,
         ]);
       }
 
@@ -55,7 +59,8 @@ class TaskController extends Controller
       $request->validate([
       'Task_title'=>'required',
       'Task_description'=> 'required',
-      'Duration' => 'required'
+      'Duration' => 'required|numeric',
+      'Status' => 'required'
     ]);
     $TaskModel = new Task([
       'Task_title' => $request->get('Task_title'),
@@ -107,10 +112,20 @@ return redirect('/listPage')->with('message', 'Task  ' . ' ' . $request->Task_ti
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+          'Task_title'=>'required',
+          'Task_description'=> 'required',
+          'Duration' => 'required|numeric',
+          'Status' => 'required'
+        ]);
+
         $TaskModel = Task::find($id);
 
        $TaskModel->Task_title = $request->Task_title;
        $TaskModel->Task_description = $request->Task_description;
+       $TaskModel->Duration = $request->Duration;
+       $TaskModel->Status = $request->Status;
+
 
        $TaskModel->save();
 

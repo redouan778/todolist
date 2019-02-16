@@ -22,11 +22,14 @@ class ListController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
+      $AllOpenTask = Task::where('Status', 'Not Done Yet')->count();
 
       $AllListInfo = List2::all();
 
       return view('list.index', [
-          'List' => $AllListInfo]);
+          'List' => $AllListInfo,
+          'AllOpenTask' => $AllOpenTask,
+      ]);
     }
 
     /**

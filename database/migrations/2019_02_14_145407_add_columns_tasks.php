@@ -14,7 +14,7 @@ class AddColumnsTasks extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-          $table->enum('Status', ['Done', 'Not Done Yet']);
+          $table->enum('Status', ['Done', 'Not Done Yet'])->default('Not Done Yet');
           $table->integer('Duration');
       });
     }
@@ -27,7 +27,7 @@ class AddColumnsTasks extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-          $table->dropColumn('Status', 'Durantion');
+          $table->dropColumn('Status', 'Duration');
         });
     }
 }

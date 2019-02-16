@@ -32,7 +32,7 @@
                           <div class="form-group">
                             <label class="col-sm-2 control-label">Task status</label>
                             <div class="col-sm-6">
-                                <select name="update_periode">
+                                <select name="Status">
                                     <option value="Done" @if($task->Status == "Done" ) selected @endif>
                                       Done
                                     </option>

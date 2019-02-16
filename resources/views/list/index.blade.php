@@ -11,6 +11,10 @@
     </header>
     <html>
   <body>
+    <h1 class="ToDos"> Task that you still need to finish: {{$AllOpenTask}}</h1>
+
+    <div class="container">
+
     <table id="data-table" class="table">
       <thead class="thead-dark">
         <tr>
@@ -54,13 +58,18 @@
 
       </tbody>
     </table>
-
+    <script>
+        $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+          $("alert").slideUp(500);
+      });
+    </script>
 <script>
     $(document).ready( function () {
         $('#data-table').DataTable();
       }
     );
   </script>
+  </div>
 </body>
 </html>
 @endsection

@@ -86,7 +86,32 @@
             @yield('content')
         </main>
     </div>
-    
+
+    <button onclick="red()">Set background</button>
+    <button onclick="green()">Set background</button>
+    <button onclick="blue()">Set background</button>
+    <button onclick="default()">Set background</button>
+
+
+
+    <script>
+    function red() {
+      document.body.style.background = "red";
+    }
+
+    function green() {
+      document.body.style.background = "green";
+    }
+
+    function blue() {
+      document.body.style.background = "blue";
+    }
+
+    function default() {
+      document.body.style.background = "white";
+    }
+    </script>
+
     <script>
     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
   $("#success-alert").slideUp(500);
