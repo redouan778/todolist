@@ -86,15 +86,30 @@
             @yield('content')
         </main>
     </div>
+    <button class="open-button" onclick="openForm()">configuration</button>
 
-    <button onclick="red()">Set background</button>
-    <button onclick="green()">Set background</button>
-    <button onclick="blue()">Set background</button>
-    <button onclick="default()">Set background</button>
+    <div class="form-popup" id="myForm">
+      <div  class="form-container">
+        <h1>Change Background</h1>
 
+        <button onclick="red()">Set to RED</button>
+        <button onclick="green()">Set to GREEN</button>
+        <button onclick="blue()">Set to BLUE</button>
+        <button onclick="defaultt()">Set back to DEFAULT</button>
 
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </div>
+    </div>
 
     <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
     function red() {
       document.body.style.background = "red";
     }
@@ -107,9 +122,11 @@
       document.body.style.background = "blue";
     }
 
-    function default() {
-      document.body.style.background = "white";
+    function defaultt() {
+        document.body.style.background = "white";
     }
+
+
     </script>
 
     <script>
