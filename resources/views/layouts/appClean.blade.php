@@ -87,8 +87,13 @@
         </main>
     </div>
 
+    <button onclick="red()">Set background</button>
+    <button onclick="green()">Set background</button>
+    <button onclick="blue()">Set background</button>
+    <button onclick="default()">Set background</button>
 
 
+<<<<<<< HEAD
     <button class="open-button" onclick="openForm()">configuration</button>
 
     <div class="form-popup" id="myForm">
@@ -102,20 +107,14 @@
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </div>
     </div>
+=======
+>>>>>>> parent of fb74ef7... Project done
 
     <button type="button" class="btn btn-secondary position">
       <a class="link" href="/">Previous</a>
     </button>
 
     <script>
-    function openForm() {
-      document.getElementById("myForm").style.display = "block";
-    }
-
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
-    }
-
     function red() {
       document.body.style.background = "red";
     }
@@ -128,13 +127,10 @@
       document.body.style.background = "blue";
     }
 
-    function defaultt() {
-        document.body.style.background = "white";
+    function default() {
+      document.body.style.background = "white";
     }
-
-
     </script>
-
 
 
     <script>
