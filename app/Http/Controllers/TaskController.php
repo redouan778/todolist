@@ -73,7 +73,7 @@ class TaskController extends Controller
 
     $TaskModel->save();
 
-return redirect('/listPage')->with('message', 'Task  ' . ' ' . $request->Task_title . ' ' . 'is succesfully created.');
+return redirect('/list')->with('message', 'Task  ' . ' ' . $request->Task_title . ' ' . 'is succesfully created.');
 
     }
 
@@ -129,7 +129,7 @@ return redirect('/listPage')->with('message', 'Task  ' . ' ' . $request->Task_ti
 
        $TaskModel->save();
 
-       return redirect('/listPage');
+       return redirect('/');
     }
 
 
@@ -146,6 +146,6 @@ return redirect('/listPage')->with('message', 'Task  ' . ' ' . $request->Task_ti
       $share = Task::find($id);
        $share->delete();
 
-        return redirect('/listPage')->with('success', 'Stock has been deleted Successfully');
+        return redirect('/')->with('success', 'Stock has been deleted Successfully');
     }
 }

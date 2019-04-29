@@ -94,8 +94,7 @@
     <div class="form-popup" id="myForm">
       <div  class="form-container">
         <h1>Change Background</h1>
-
-        <button onclick="red()">Set to RED</button>
+        <button onclick="red()" type="button" class="btn btn-danger">Set to RED</button>
         <button onclick="green()">Set to GREEN</button>
         <button onclick="blue()">Set to BLUE</button>
         <button onclick="defaultt()">Set back to DEFAULT</button>
@@ -103,6 +102,10 @@
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </div>
     </div>
+
+    <button type="button" class="btn btn-secondary position">
+      <a class="link" href="/">Previous</a>
+    </button>
 
     <script>
     function openForm() {

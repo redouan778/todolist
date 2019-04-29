@@ -43,11 +43,10 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="opmerking"  class="col-sm-2 control-label">Task Duration</label>
                             <div class="col-sm-6">
-                                <input type="text"  name="Duration" class="form-control" value="{{$task->Duration}}" />
+                                <input type="text" onkeypress="return isNumber(event)"  name="Duration" class="form-control" value="{{$task->Duration}}" />
                             </div>
                         </div>
 
@@ -59,8 +58,21 @@
                 </form>
             </div>
         </div>
-        <button class="btn-PP btn-primary">
-            <i class="fa fa-backward terug"><a class="back" href="../">  Vorige pagina</a></i>
-        </button>
+    
+
+
     </div>
+    <script>
+
+
+      function isNumber(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+          return false;
+      }
+      return true;
+
+    }
+  </script>
 @endsection

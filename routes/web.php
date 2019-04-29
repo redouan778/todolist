@@ -12,16 +12,16 @@
 */
 
 // all lists:   localhost/list/index
-Route::get('/listPage', 'ListController@index')->name('list');
+Route::get('/', 'ListController@index')->name('list');
 
 // http://127.0.0.1:8000/taskPage/4
-Route::get('/taskPage/{id}', 'TaskController@index')->name('taskView');
+Route::get('/task/{id}', 'TaskController@index')->name('taskView');
 
 Route::get('/task/{list_id}/create', 'TaskController@create')->name('task.create');
 
 Route::resource('task', 'TaskController');
 
-Route::get('/home', 'TaskController@loggedInPage')->name('home');
+// Route::get('/home', 'TaskController@loggedInPage')->name('login');
 
 Auth::routes();
 

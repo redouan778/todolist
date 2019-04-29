@@ -175,3 +175,14 @@ overflow-x: hidden;
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.link{
+  color: white;
+}
+
+.position{
+  position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+}

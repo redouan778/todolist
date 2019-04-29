@@ -48,13 +48,14 @@
                 </li>
           </td>
           <td>
-            <a href="/taskPage/{{$key->list_id}}" type="button" class="btn btn-default">Show All</a>
+            <a href="/task/{{$key->list_id}}" type="button" class="btn btn-default">Show All</a>
           </td>
           <td>
             {{$key->created_at}}
           </td>
         </tr>
         @endforeach
+
 
 
 
